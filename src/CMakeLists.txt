@@ -1,6 +1,3 @@
-include_directories (${CMAKE_CURRENT_SOURCE_DIR}/src)
-include_directories (${CMAKE_CURRENT_SOURCE_DIR}/../libs/kiss_fft130)
-
 add_library (
     Gist STATIC
     AccelerateFFT.cpp
@@ -19,8 +16,12 @@ add_library (
     WindowFunctions.h
     Yin.cpp
     Yin.h
+    kiss_fft.h
+    kiss_fft.c
+    kissfft.hh
+    _kiss_fft_guts.h
 )
 
-source_group (Source src)
+
 
 target_compile_definitions (Gist PUBLIC -DUSE_KISS_FFT)
